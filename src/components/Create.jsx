@@ -1,6 +1,7 @@
 import { nanoid } from "nanoid";
 import React, { useContext, useState } from "react";
 import { ProductContext } from "../utils/Context";
+import { useNavigate } from "react-router-dom";
 
 const Create = () => {
   const [image, setImage] = useState("");
@@ -11,8 +12,15 @@ const Create = () => {
 
  const[products,setproducts] = useContext(ProductContext)
 
+ const navigate = useNavigate()
+
   const submithandle = (e) => {
     e.preventDefault();
+
+    if(!image || !title  ||  !category || !price || !description){
+      alert("Please fill all the fields");
+      return;
+    }
     // save to db
     const obj = {id:nanoid(), image, title, category, price, description };
 
@@ -25,6 +33,10 @@ const Create = () => {
     setproducts([...products, obj])
 
     localStorage.setItem("product",JSON.stringify([...products, obj]));
+
+    navigate('/')
+
+
 
    
 
@@ -40,6 +52,7 @@ const Create = () => {
           placeholder="Image link"
           value={image}
           onChange={(e) => setImage(e.target.value)}
+          
         />
 
         <input
@@ -77,6 +90,7 @@ const Create = () => {
         />
 
         <button
+        
           type="submit"
           className="w-full bg-blue-400  px-10 py-3 text-xl font-semibold text-white hover:bg-blue-500 hover:cursor-pointer"
         >

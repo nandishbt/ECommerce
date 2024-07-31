@@ -29,6 +29,12 @@ const Details = () => {
     // },[])
    
    const Myproduct = products.find(product => product.id == id)
+
+   const deleteHandler = (id)=>{
+    const updatedproducts = products.filter(p=>p.id != id)
+    setproducts(updatedproducts)
+    localStorage.setItem('product', JSON.stringify(updatedproducts))
+   }
      
   return (Myproduct?
     
@@ -47,7 +53,7 @@ const Details = () => {
                 <h1 className='mb-5 font-semibold' >{Myproduct.description}</h1>
 
               <Link to={'/'} className='px-4 py-1 border border-blue-300 text-blue-300 rounded text-xl font-semibold mr-5'> Edit </Link>
-              <Link to={'/'} className='px-4 py-1 border border-red-300 text-red-300 rounded text-xl font-semibold'> Delete </Link>
+              <Link to={'/'} onClick={()=>deleteHandler(Myproduct.id)} className='px-4 py-1 border border-red-300 text-red-300 rounded text-xl font-semibold'> Delete </Link>
 
             </div>
 

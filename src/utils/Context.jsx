@@ -246,22 +246,8 @@ const Context = (props) => {
               "count": 145
           }
       },
-      {
-          "id": "cPLN2fwyzwn-R-5z61iQg",
-          "image": "https://images.unsplash.com/photo-1531646317777-0619c7c5d1d3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-          "title": "cream",
-          "category": "cosmetics",
-          "price": "7",
-          "description": "Nude by nature makeup\n\nPublished on July 15, 2018"
-      },
-      {
-          "id": "D0JFThQ2cT2m9vP_wZmHZ",
-          "image": "https://images.unsplash.com/photo-1602810320073-1230c46d89d4?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-          "title": "shirt",
-          "category": "men's clothing",
-          "price": "0150",
-          "description": "Los Angeles, CA, USA\nPublished on October 16, 2020"
-      }
+    
+     
   ])
 
     // const getproducts = async() =>{
