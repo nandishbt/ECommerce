@@ -22,7 +22,7 @@ const Navbar = () => {
   return ( uniqueProduct?
     <div className='w-[20%]  h-screen bg-zinc-50 flex flex-col  p-10 '>
 
-        <NavLink to={'/addproduct'} className={'text-blue-400 text-xl w-[80%] ml-[10%] text-center hover:text-blue-600 hover:cursor-pointer bg-white border border-blue-300 p-3 px-5 my-10  '} >ADD PRODUCT</NavLink>
+        <NavLink to={'/create'} className={'text-blue-400 text-xl w-[80%] ml-[10%] text-center hover:text-blue-600 hover:cursor-pointer bg-white border border-blue-300 p-3 px-5 my-10  '} >ADD PRODUCT</NavLink>
 
         <hr className='w-[80%] mb-5'></hr>
 
