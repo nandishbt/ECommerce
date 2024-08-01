@@ -1,11 +1,12 @@
 import React, {  useContext, useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 
 import Loading from './Loading'
 import  axios  from '../utils/axios'
 import { ProductContext } from '../utils/Context'
 
 const Details = () => {
+ const navigate =  useNavigate()
 
   
 
@@ -34,6 +35,8 @@ const Details = () => {
     const updatedproducts = products.filter(p=>p.id != id)
     setproducts(updatedproducts)
     localStorage.setItem('product', JSON.stringify(updatedproducts))
+    navigate(-1)
+
    }
      
   return (Myproduct?
@@ -52,8 +55,8 @@ const Details = () => {
                 <h1 className='text-xl text-red-400 mb-5  '>{Myproduct.price}</h1>
                 <h1 className='mb-5 font-semibold' >{Myproduct.description}</h1>
 
-              <Link to={'/'} className='px-4 py-1 border border-blue-300 text-blue-300 rounded text-xl font-semibold mr-5'> Edit </Link>
-              <Link to={'/'} onClick={()=>deleteHandler(Myproduct.id)} className='px-4 py-1 border border-red-300 text-red-300 rounded text-xl font-semibold'> Delete </Link>
+              <Link to={`/edit/${id}`} className='px-4 py-1 border border-blue-300 text-blue-300 rounded text-xl font-semibold mr-5'> Edit </Link>
+              <Link  onClick={()=>deleteHandler(Myproduct.id)} className='px-4 py-1 border border-red-300 text-red-300 rounded text-xl font-semibold'> Delete </Link>
 
             </div>
 
